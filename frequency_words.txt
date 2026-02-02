@@ -1,0 +1,218 @@
+# --- Google 全家桶及 AI ---
+谷歌
+Google
+Gemini
+DeepMind
+Bard
+Gemma
+Notebooklm
+AI Studio
+!gai
+
+安卓
+Android
+Chrome
+YouTube
+Google Workspace
+Gmail
+Google Drive
+Google Calendar
+Google Cloud
+GCP
+
+# --- (新增) 流行开源项目与框架 ---
+
+# AI 框架与生态
+PyTorch
+TensorFlow
+Keras
+JAX
+
+Hugging Face
+Transformers
+Diffusers
+
+LangChain
+LlamaIndex
+
+# AI 明星模型
+Llama 3
+Llama
+Mistral
+Mixtral
+
+Stable Diffusion
+Midjourney
+!mj
+ControlNet
+
+# AI 工具与部署
+Ollama
+vLLM
+AutoGen
+
+LoRA
+QLoRA
+
+# Python 数据与Web框架
+FastAPI
+Django
+Flask
+
+Python
+
+Pandas
+NumPy
+Scikit-learn
+Streamlit
+Jupyter
+
+# 向量数据库
+Milvus
+Chroma
+Weaviate
+Pinecone
+
+# --- AI 通用及其他厂商 ---
+AI
+AIGC
+人工智能
+大模型
+LLM
+文生视频
+文生图
+Sora
+
+chatgpt
+openai
+!gai
+
+claude
+Anthropic
+
+DeepSeek
+梁文锋
+
+# --- 效率办公及生产力工具 ---
+效率工具
+协同办公
+WPS
+金山办公
+
+钉钉
+飞书
+Lark
+
+Notion
+Slack
+
+微软
+Microsoft
+Copilot
+Microsoft 365
+Office
+
+# --- 中国科技巨头及创始人 ---
+华为
+任正非
+鸿蒙
+HarmonyOS
+
+比亚迪
+王传福
+
+字节
+张一鸣
+抖音
+
+京东
+刘强东
+
+米哈游
+原神
+星穹铁道
+
+# --- 电脑硬件及芯片 ---
+黄仁勋
+英伟达
+NVIDIA
+
+AMD
+英特尔
+Intel
+
+芯片
+半导体
+光刻机
+
+# --- 智能设备与操作系统 ---
+iphone
+ipad
+mac
+ios
+Apple
+苹果
+
+机器人
+宇树
+王兴兴
+
+汽车
+自动驾驶
+智能座舱
+!二手车
+
+马斯克
+特斯拉
+Tesla
+!二手
+
+# --- 中国社会经济民生 ---
+经济
+消费
+就业
+失业
+内卷
+躺平
+996
+灵活就业
+
+房地产
+房价
+烂尾楼
+保交楼
+恒大
+碧桂园
+
+人口
+生育率
+老龄化
+养老金
+养老
+
+# --- 教育与职场 ---
+教育
+高考
+考研
+双减
+学历
+
+职场
+裁员
+
+# --- 社会热点与网络文化 ---
+社会事件
+热点事件
+辟谣
+
+网络暴力
+人肉搜索
+网暴
+
+国潮
+直播带货
+
+# --- 捕获所有热点 (新增这个组) ---
+的
+是
+了
