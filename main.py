@@ -2274,15 +2274,35 @@ class ReportGenerator:
             )
 
         # 发送到Telegram
+        # --- 替换开始：Telegram 发送逻辑 (带自动降级重试) ---
         if telegram_token and telegram_chat_id:
-            results["telegram"] = ReportGenerator._send_to_telegram(
-                telegram_token,
-                telegram_chat_id,
-                report_data,
-                report_type,
-                update_info_to_send,
-                proxy_url,
-            )
+            tg_url = f"https://api.telegram.org/bot{telegram_token}/sendMessage"
+            
+            # 分批次发送
+            for i, batch_msg in enumerate(batches, 1):
+                # 尝试 1: 使用 Markdown 模式发送 (好看，但容易因特殊字符报错)
+                payload = {
+                    "chat_id": telegram_chat_id, 
+                    "text": batch_msg, 
+                    "parse_mode": "Markdown",
+                    "disable_web_page_preview": True
+                }
+                
+                print(f"发送Telegram第 {i}/{len(batches)} 批次...")
+                try:
+                    resp = requests.post(tg_url, json=payload, proxies=proxies, timeout=10)
+                    
+                    # 如果遇到 400 错误 (通常是格式问题)，尝试降级发送
+                    if resp.status_code == 400:
+                        print(f"⚠️ Telegram Markdown 发送失败 (400)，尝试使用纯文本重发...")
+                        payload.pop("parse_mode") # 移除格式模式，使用纯文本
+                        requests.post(tg_url, json=payload, proxies=proxies, timeout=10)
+                    
+                except Exception as e:
+                    print(f"❌ Telegram 第 {i} 批次发送异常: {e}")
+                
+                time.sleep(1) # 避免触发限流
+        # --- 替换结束 ---
 
         if not results:
             print("未配置任何webhook URL，跳过通知发送")
