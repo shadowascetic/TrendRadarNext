@@ -1232,8 +1232,17 @@ class ReportGenerator:
                 fe.id(link_url if link_url else cleaned_title)
     
                 time_str = title_data.get('last_time', TimeHelper.format_time_filename())
-                hour = int(time_str.split('时')[0])
-                minute = int(time_str.split('时')[1].replace('分',''))
+                
+                # --- 修复开始：兼容纯数字(0215)和中文(02时15分) ---
+                if len(time_str) == 4 and time_str.isdigit():
+                    hour = int(time_str[:2])
+                    minute = int(time_str[2:])
+                elif '时' in time_str:
+                    hour = int(time_str.split('时')[0])
+                    minute = int(time_str.split('时')[1].replace('分',''))
+                else:
+                    hour, minute = 0, 0
+                # --- 修复结束 ---
                 
                 pub_datetime_naive = datetime.combine(today, datetime.min.time()).replace(hour=hour, minute=minute)
                 pub_datetime_aware = beijing_tz.localize(pub_datetime_naive)
