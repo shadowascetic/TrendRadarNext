@@ -206,7 +206,7 @@ class DataFetcher:
                 if retries <= max_retries:
                     base_wait = random.uniform(min_retry_wait, max_retry_wait)
                     additional_wait = (retries - 1) * random.uniform(1, 2)
-                    wait_time = base_wait  additional_wait
+                    wait_time = base_wait + additional_wait
                     print(f"请求 {id_value} 失败: {e}. {wait_time:.2f}秒后重试...")
                     time.sleep(wait_time)
                 else:
